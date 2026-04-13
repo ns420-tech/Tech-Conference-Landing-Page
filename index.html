@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tech Conference 2026</title>
+
+<style>
+
+/* BODY */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #0a0f2c, #1a1f4f, #2d1b69);
+    color: #e2e8f0;
+}
+
+/* HERO */
+.hero {
+    text-align: center;
+    padding: 70px 20px;
+    background: linear-gradient(45deg, #7c3aed, #22d3ee);
+}
+
+.hero h1 {
+    font-size: 2.8rem;
+    margin: 0;
+}
+
+/* COUNTDOWN */
+.countdown {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.countdown div {
+    background: rgba(255,255,255,0.08);
+    padding: 12px;
+    border-radius: 10px;
+    min-width: 70px;
+}
+
+/* NAV */
+nav {
+    text-align: center;
+    padding: 12px;
+    background: rgba(10, 15, 44, 0.8);
+    backdrop-filter: blur(8px);
+}
+
+nav a {
+    margin: 0 15px;
+    color: #cbd5f5;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+nav a:hover {
+    color: #22d3ee;
+}
+
+/* SECTION */
+section {
+    max-width: 900px;
+    margin: 25px auto;
+    padding: 25px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 14px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+    backdrop-filter: blur(12px);
+}
+
+section h2 {
+    color: #22d3ee;
+}
+
+/* SPEAKERS */
+.speakers {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    width: 200px;
+    background: rgba(255,255,255,0.07);
+    border-radius: 12px;
+    padding: 15px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px) scale(1.03);
+    background: rgba(124, 58, 237, 0.25);
+}
+
+/* FORM */
+form {
+    max-width: 500px;
+    margin: auto;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 12px 0;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.15);
+    background: rgba(255,255,255,0.06);
+    color: #e2e8f0;
+}
+
+form input::placeholder,
+form textarea::placeholder {
+    color: #94a3b8;
+}
+
+form textarea {
+    height: 100px;
+    resize: none;
+}
+
+form button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(45deg, #7c3aed, #22d3ee);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+form button:hover {
+    transform: scale(1.03);
+    opacity: 0.9;
+}
+
+/* POPUP */
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 15, 44, 0.7);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-box {
+    background: #1a1f4f;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    color: #e2e8f0;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+    .countdown {
+        flex-wrap: wrap;
+    }
+
+    .card {
+        width: 80%;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<div class="hero">
+    <h1>Tech Conference 2026</h1>
+    <p>Innovate | Learn | Connect</p>
+
+    <div class="countdown">
+        <div><span id="days">0</span><br>Days</div>
+        <div><span id="hours">0</span><br>Hours</div>
+        <div><span id="minutes">0</span><br>Minutes</div>
+        <div><span id="seconds">0</span><br>Seconds</div>
+    </div>
+</div>
+
+<!-- NAV -->
+<nav>
+    <a href="#about">About</a>
+    <a href="#speakers">Speakers</a>
+    <a href="#register">Register</a>
+</nav>
+
+<!-- ABOUT -->
+<section id="about">
+    <h2>About Event</h2>
+    <p>
+        Tech Conference 2026 is a premier event bringing together developers, designers, and tech enthusiasts. 
+        Learn about the latest technologies, network with professionals, and gain hands-on experience.
+    </p>
+</section>
+
+<!-- SPEAKERS -->
+<section id="speakers">
+    <h2>Speakers</h2>
+
+    <div class="speakers">
+        <div class="card">
+            <h3>Ali Khan</h3>
+            <p>Web Developer</p>
+        </div>
+
+        <div class="card">
+            <h3>Sara Ahmed</h3>
+            <p>AI Specialist</p>
+        </div>
+
+        <div class="card">
+            <h3>Usman Tariq</h3>
+            <p>Software Engineer</p>
+        </div>
+    </div>
+</section>
+
+<!-- REGISTER -->
+<section id="register">
+    <h2>Register Now</h2>
+
+    <form onsubmit="submitForm(event)">
+        <input type="text" placeholder="Full Name" required>
+        <input type="email" placeholder="Email Address" required>
+        <textarea placeholder="Your Message"></textarea>
+        <button type="submit">Register Now</button>
+    </form>
+</section>
+
+<!-- POPUP -->
+<div class="popup" id="popup">
+    <div class="popup-box">
+        <h2>🎉 Success!</h2>
+        <p>Registration Completed</p>
+    </div>
+</div>
+
+<script>
+
+function submitForm(e){
+    e.preventDefault();
+
+    document.getElementById("popup").style.display = "flex";
+    e.target.reset();
+
+    setTimeout(()=>{
+        document.getElementById("popup").style.display = "none";
+    },3000);
+}
+
+const eventDate = new Date("Jan 1, 2027 00:00:00").getTime();
+
+setInterval(()=>{
+    const now = new Date().getTime();
+    const diff = eventDate - now;
+
+    document.getElementById("days").innerText = Math.floor(diff/(1000*60*60*24));
+    document.getElementById("hours").innerText = Math.floor((diff%(1000*60*60*24))/(1000*60*60));
+    document.getElementById("minutes").innerText = Math.floor((diff%(1000*60*60))/(1000*60));
+    document.getElementById("seconds").innerText = Math.floor((diff%(1000*60))/1000);
+},1000);
+
+</script>
+
+</body>
+</html>
